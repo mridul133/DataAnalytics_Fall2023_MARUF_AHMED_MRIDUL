@@ -23,6 +23,7 @@ fivenum(EPI, na.rm = T)
 stem(EPI)
 hist(EPI)
 hist(EPI, seq(30., 95., 1.0), prob=TRUE)
+lines(density(EPI,na.rm=TRUE,bw=1.0))
 lines(density(EPI,na.rm=TRUE,bw="SJ"))
 rug(EPI)
 
@@ -35,8 +36,26 @@ x<-seq(30,95,1)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
+
+DALY
+
+
+stem(DALY)
+hist(DALY)
+hist(DALY, seq(0., 100., 1.0), prob=TRUE)
+lines(density(DALY,na.rm=TRUE,bw=1.))
+lines(density(DALY,na.rm=TRUE,bw="SJ"))
+rug(DALY)
+
+plot(ecdf(DALY), do.points=FALSE, verticals=TRUE)
+
+par(pty="s")
+qqnorm(DALY); qqline(DALY)
+
+boxplot(EPI, DALY)
+
 #other data
-GRUMP_data <- read.csv(”<path>/GPW3_GRUMP_SummaryInformation_2010.csv")
+# GRUMP_data <- read.csv("GPW3_GRUMP_SummaryInformation_2010.csv")
 
 cat("\014")
 
