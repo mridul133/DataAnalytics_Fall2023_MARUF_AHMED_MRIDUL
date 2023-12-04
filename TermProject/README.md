@@ -1,4 +1,4 @@
-# Blockchain Social Media
+# Twitter Dynamics in Crypto
 
 
 ## Requirements
@@ -15,14 +15,10 @@ To update the conda environment file, run
 conda env export > environment.yml
 ```
 
-To update the requirements file, run 
+To install the requirements, run 
 
 ```bash
-pip list --format=freeze > requirements.txt
+pip install -r requirements.txt
 ```
 
-## Example usage:
-
-```python
-from crypto_twitter import 
-```
+A .env file is needed in the home directory which should cotain the DATA_DIR, ES_HOSTNAME and ES_INDEXNAME.
